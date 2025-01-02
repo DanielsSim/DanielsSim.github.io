@@ -42,9 +42,9 @@
 </ul>
 <h1 id="part-1-base-problems-to-keep-in-mind">Part 1: Base Problems To Keep in Mind</h1>
 <p>Don&rsquo;t have enough problems yet? Here you go.</p>
-<p>(I recommend skimming part 1 and only reading the details if you have enough time. If this feels like a drag to read, consider to jump ahead to part 2 and come back for these later. Really, I&rsquo;m sorry for so much text before we get to the actual model, but I need to introduce them before that.)</p>
+<p>(If this feels like a drag to read, consider to jump ahead to part 2 and come back for these later)</p>
 <h2 id="11-a-problem-of-scales">1.1: A Problem Of Scales</h2>
-<p>We often fail to appreciate the scales we&rsquo;re dealing with. But things are only practically feasible if they are available on the right scale. Base numbers (rounded very generously, from <a href="https://ourworldindata.org/energy/country/germany">Germany: Energy Country Profile | Our World in Data</a> and <a href="https://www.cleanenergywire.org/factsheets/germanys-energy-consumption-and-power-mix-charts">Germany’s energy consumption and power mix in charts | Clean Energy Wire</a>):</p>
+<p>We often fail to appreciate the scales we&rsquo;re dealing with. But things are only practically feasible if they are available on the right scale. Base numbers:<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
 <ul>
 <li>An average person consumes ~1.500 kWh of electricity per year (compare this to the number on your electricity bill to see how you&rsquo;re doing)</li>
 <li>Germany as a whole consumes ~500 TWh of electricity per year, or ~6.000 kWh per person and year (~84M inhabitants). Only 25% is private consumption, another ~30% &ldquo;trade and services&rdquo; and ~40% industry.</li>
@@ -58,7 +58,7 @@
 <li>The seasonality effects mentioned above still imply we have to store something like 5 MWh per person from summer to winter. This is way above the storage potential of batteries of all kinds: You&rsquo;d need the equivalent of 100 electric vehicles per person to provide enough storage for seasonal compensation (at 50 kWh per vehicle).</li>
 </ul>
 <h2 id="12-a-problem-of-limits-to-growth">1.2: A Problem Of Limits To Growth</h2>
-<p>Limits change over time: Growth may be exponential, but occurs at limited rates nonetheless. Actually, nothing is exponential - there are limits to how far you can push something. If not mentioned elsewere, data is from <a href="https://www.zeit.de/wirtschaft/energiemonitor-deutschland-gaspreis-spritpreis-energieversorgung">Energiemonitor | ZEIT ONLINE</a></p>
+<p>Limits change over time: Growth may be exponential, but occurs at limited rates nonetheless. Actually, nothing is exponential - there are limits to how far you can push something. <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
 <ul>
 <li>solar power: 5 GW added per year, growing (target is increase to 22 GW/year in 2026; 1 W of capacity yields something like <a href="https://www.oeko-energie.de/shop1/de/Solarstrom/Solarmodule/Solarmodul-Wissen/Leistung--bzw--Ertrag-eines-Solarmodules/">1kWh of electricity per year</a>; so with 84M people we get 5GW = ~60 kWh per person and year; 22 GW = ~260 kWh per person and year). Prices follow <a href="https://en.wikipedia.org/wiki/Swanson%27s_law#/media/File:Solar-pv-prices-vs-cumulative-capacity.png">Swanson&rsquo;s law</a> and reduce by half every 5 years or so. Limits to growth: I haven&rsquo;t checked but it looks as if there&rsquo;s enough space to mount these on and enough Silicium to build them from.</li>
 <li>wind power: ~2 GW added per year (target is increase to 7.8 GW/year in 2025; <a href="https://strom-report.de/windenergie/">64 GW installed power yield ~130 TWh per year</a>, so 1 W translates to ~2kWh of electricity per year). Here I&rsquo;m confused on the amount of space left but apparently a <a href="https://www.bundesregierung.de/breg-de/themen/klimaschutz/wind-an-land-gesetz-2052764">3x increase from 0.5..0.8% to 2% of land available for wind power</a> is at least theoretically possible.</li>
@@ -99,7 +99,7 @@
 </ol>
 <p><img src="fluctuation_all.png" alt="">
 <img src="fluctuation_legend.png" alt="">
-(a few days from October 2022 in the <a href="https://www.smard.de/en/marktdaten?marketDataAttributes=%7B%22resolution%22:%22hour%22,%22from%22:1665808917927,%22to%22:1666759317926,%22moduleIds%22:%5B1004066,1001226,1001225,1004067,1004068,1001228,1001224,1001223,1004069,1004071,1004070,1001227,5000410%5D,%22selectedCategory%22:null,%22activeChart%22:true,%22style%22:%22color%22,%22categoriesModuleOrder%22:%7B%7D,%22region%22:%22DE%22%7D">SMARD data viewer</a>. The red curve is total demand, so I&rsquo;m not sure what&rsquo;s up with the difference - maybe import/export of electricity?)</p>
+(a few days from October 2022 in the <a href="https://www.smard.de/en/marktdaten?marketDataAttributes=%7B%22resolution%22:%22hour%22,%22from%22:1665808917927,%22to%22:1666759317926,%22moduleIds%22:%5B1004066,1001226,1001225,1004067,1004068,1001228,1001224,1001223,1004069,1004071,1004070,1001227,5000410%5D,%22selectedCategory%22:null,%22activeChart%22:true,%22style%22:%22color%22,%22categoriesModuleOrder%22:%7B%7D,%22region%22:%22DE%22%7D">SMARD data viewer</a>. The red curve is total demand, so there&rsquo;s also some import/export going on that fills the difference)</p>
 <ol start="2">
 <li>Basically, we&rsquo;ve reached a level of renewables where higher shares are only possible by either accepting unused excess power in high-supply situations or adding significantly more storage to the grid. Maybe both. This matches other sources I&rsquo;ve seen claiming that at wind/solar above 30..40% of total electricity generated, you need buffering.</li>
 <li>Following a rough &ldquo;factor 2 of fluctuation per day&rdquo;-model, we&rsquo;d need capacity to buffer something like 1 day of electricity in storage (to compensate for 2 bad days in a row). That would be something like 6 MWh per year / 365 days = 16 kWh per person. Thats… wow, that&rsquo;s just huge. I don&rsquo;t see a way adding that much storage to the grid at battery prices of 500€ per kWh, that&rsquo;s like an order of magnitude too high (rough estimate: if you pay 50€ per kWh and year and use that 100 times per year, that&rsquo;s still 50 Ct/kWh of stored energy). I&rsquo;m not saying we won&rsquo;t need storage, just that storage in the size of &ldquo;buffer energy for 2 days of low wind+sunshine&rdquo; is very unlikely to be available in the next ~10 years.</li>
@@ -311,6 +311,12 @@
 <ol>
 <li id="fn:1">
 <p>My example here is Germany but all calculations are on a per-person level. Converting this to any other country should only be a small effort.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Numbers are sourced from <a href="https://ourworldindata.org/energy/country/germany">Germany: Energy Country Profile | Our World in Data</a> and <a href="https://www.cleanenergywire.org/factsheets/germanys-energy-consumption-and-power-mix-charts">Germany’s energy consumption and power mix in charts | Clean Energy Wire</a>). Usually I eyeballed graphs and rounded numbers.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>If not mentioned elsewere, data is from <a href="https://www.zeit.de/wirtschaft/energiemonitor-deutschland-gaspreis-spritpreis-energieversorgung">Energiemonitor | ZEIT ONLINE</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>
