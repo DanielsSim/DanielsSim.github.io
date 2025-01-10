@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>predictions on A DIY approach to simulation, the universe and everything else</title>
+    <link>https://danielssim.github.io/tags/predictions/</link>
+    <description>Recent content in predictions on A DIY approach to simulation, the universe and everything else</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 10 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://danielssim.github.io/tags/predictions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Grappling with AI progress</title>
+      <link>https://danielssim.github.io/notes_reviews/ai_progress/</link>
+      <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://danielssim.github.io/notes_reviews/ai_progress/</guid>
+      <description>This post is just me trying to understand what the near-term future might mean in terms of AI progress. All of this is highly personal, I&amp;rsquo;m mostly writing this to reread it in 5 years and to see how it turned out.
+tl;dr: I think AI becoming smart enough to replace most of today&amp;rsquo;s work in engineering and manufacturing is a possible scenario that might occur in the next decade. I have no idea what it will do to our society and life.</description>
+    </item>
+    
+  </channel>
+</rss>
