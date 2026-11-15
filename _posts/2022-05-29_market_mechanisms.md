@@ -2,7 +2,7 @@
 title: "What markets can and cannot do"
 date: 2022-05-29
 categories: economics long_read
-draft: false
+published: false
 ---
   
 I spent some time reading up on economics and figured I might as well just write a summary. Quick warnings:
