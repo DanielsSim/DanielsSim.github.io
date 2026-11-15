@@ -2,7 +2,7 @@
 title: "How to Decarbonize"
 date: 2023-01-18
 tags: ["economics", "long_read", "effective altruism"]
-draft: false
+published: false
 ---
 
 The target of this post is to build a baseline mental model of energy supply and CO2 reduction on a country-wide level. Be warned that "baseline model" is way less than a detailed expert model: the model serves as a robust rough guide to the state of the world, but there are a lot of small details missing. [^1]
