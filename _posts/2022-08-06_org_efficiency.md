@@ -1,5 +1,6 @@
 ---
 title: "If you're (in) a large organization, why are you so inefficient?"
+layout: post
 date: 2022-08-06T08:00:00+02:00
 categories: economics long_read
 draft: false
